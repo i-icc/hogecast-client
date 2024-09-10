@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "ai-cast",
     "public": "build",
     "ignore": [
       "firebase.json",
