@@ -18,3 +18,5 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGECAST }}
           channelId: live
           projectId: hogecast
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
