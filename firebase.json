@@ -1,6 +1,7 @@
 {
   "hosting": {
     "source": ".",
+    "site": "ai-cast",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,6 +9,12 @@
     ],
     "frameworksBackend": {
       "region": "asia-east1"
-    }
+    },
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
   }
 }
