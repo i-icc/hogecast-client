@@ -5,7 +5,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="" element={'現在作成中'} />
+        <Route path="" element={'現在作成中です🥺'} />
         <Route path="*" element={'404 現在作成中'} />
       </Routes>
     </Router>
