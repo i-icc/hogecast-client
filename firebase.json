@@ -1,7 +1,6 @@
 {
   "hosting": [
     {
-      "target": "prod",
       "source": ".",
       "site": "ai-cast",
       "ignore": [
@@ -20,7 +19,6 @@
       ]
     },
     {
-      "target": "stg",
       "source": ".",
       "site": "hoge-cast-stg",
       "ignore": [
