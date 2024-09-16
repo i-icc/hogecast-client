@@ -2,7 +2,7 @@
   "hosting": [
     {
       "source": ".",
-      "site": "ai-cast",
+      "target": "prod",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -20,7 +20,7 @@
     },
     {
       "source": ".",
-      "site": "hoge-cast-stg",
+      "target": "stg",
       "ignore": [
         "firebase.json",
         "**/.*",

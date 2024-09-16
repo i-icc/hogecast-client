@@ -1,5 +1,19 @@
 {
   "projects": {
     "default": "hogecast"
-  }
+  },
+  "targets": {
+    "hogecast": {
+      "hosting": {
+        "prod": [
+          "ai-cast"
+        ],
+        "stg": [
+          "hoge-cast-stg"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }

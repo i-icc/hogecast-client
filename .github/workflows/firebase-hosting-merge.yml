@@ -24,7 +24,7 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGECAST }}
           channelId: live
           projectId: hogecast
-          site: ai-cast
+          target: prod
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
 
@@ -36,6 +36,6 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_HOGECAST }}
           channelId: live
           projectId: hogecast
-          site: hoge-cast-stg
+          target: stg
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
