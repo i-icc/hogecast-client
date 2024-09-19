@@ -1,13 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import { Podcast } from '@/types';
 
-interface PodcastCardProps {
-    image: string;
-    title: string;
-    description: string;
-}
-
-const PodcastCard: React.FC<PodcastCardProps> = ({ image, title, description }) => {
+const PodcastCard: React.FC<Podcast> = ({ image, title, description }) => {
     return (
         <div className="w-36 p-2">
             <Image

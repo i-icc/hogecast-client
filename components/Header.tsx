@@ -11,7 +11,6 @@ const Header: React.FC = () => {
                 height={48}
                 className="rounded-lg"
             />
-            <h1 className="text-lg font-semibold">AI cast</h1>
         </div>
     );
 };
