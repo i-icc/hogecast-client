@@ -16,7 +16,7 @@ const mockEpisodes: EpisodeType[] = [
     duration: '00:05:54',
     description: '',
     description_html: '',
-    image: '',
+    image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg',
     id: '',
     radio_key: '',
     sound_url: ''
