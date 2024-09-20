@@ -26,13 +26,17 @@ jobs:
 
       - name: Deploy to Firebase Hosting (prod)
         if: github.ref == 'refs/heads/main'
-        run: firebase hosting:channel:deploy live --project hogecast
+        run: |
+          firebase experiments:enable webframeworks
+          firebase hosting:channel:deploy live --project hogecast
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
       # ステージング環境 (stg) にデプロイ
       - name: Deploy to Firebase Hosting (stg)
         if: github.ref == 'refs/heads/develop'
-        run: firebase hosting:channel:deploy stg --project hogecast
+        run: |
+          firebase experiments:enable webframeworks
+          firebase hosting:channel:deploy stg --project hogecast
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
