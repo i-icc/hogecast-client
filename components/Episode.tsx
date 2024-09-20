@@ -1,7 +1,7 @@
 import React from 'react';
-import { Episode } from '@/types';
+import { Episode as EpisodeType } from '@/types';
 
-const Episode: React.FC<Episode> = ({ title, release_datetime, duration }) => {
+const Episode: React.FC<EpisodeType> = ({ title, release_datetime, duration }) => {
     return (
         <div className="p-4 border-b border-gray-800">
             <h3 className="text-white font-semibold">{title}</h3>
