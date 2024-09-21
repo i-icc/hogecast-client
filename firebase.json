@@ -12,6 +12,14 @@
     },
     "rewrites": [
       {
+        "source": "/_next/image",
+        "destination": "/_next/image"
+      },
+      {
+        "source": "/_next/static/*",
+        "destination": "/_next/static/*"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
