@@ -1,5 +1,6 @@
 import { Podcast } from '@/types';
 import React from 'react';
+import parse from 'html-react-parser';
 
 const ProgramInfoModal = (podcast: Podcast) => {
     return (
@@ -14,7 +15,7 @@ const ProgramInfoModal = (podcast: Podcast) => {
                     </div>
                 </div>
                 <div className="p-4 space-y-4 max-h-[80vh] overflow-y-auto">
-                    {podcast.description}
+                    {parse(podcast.description_html)}
                 </div>
             </div>
         </div>
