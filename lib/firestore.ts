@@ -11,6 +11,7 @@ export const getPodcasts = async (): Promise<Podcast[]> => {
         title: doc.data().title,
         image: doc.data().image,
         description: doc.data().description,
+        description_html: doc.data().description_html,
     }));
 };
 

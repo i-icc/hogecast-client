@@ -14,5 +14,6 @@ export interface Podcast {
     image: string;
     title: string;
     description: string;
+    description_html: string;
     id: string;
 }
