@@ -1,6 +1,6 @@
-import Header from '../components/Header';
-import PodcastCard from '../components/PodcastCard';
-import Episode from '../components/Episode';
+import Header from '../components/Home/Header';
+import PodcastCard from '../components/Home/PodcastCard';
+import Episode from '../components/Home/Episode';
 import PlayerBar from '../components/PlayerBar';
 import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
 
