@@ -19,23 +19,23 @@ async function fetchEpisodes(): Promise<EpisodeType[]> {
       title: '旅ノートの作り方...他【2024-09-18】',
       release_datetime: '2024-09-18',
       duration: '00:05:54',
-      description: '',
-      description_html: '',
+      description: '説明文',
+      description_html: '説明文<br>html tag あり<a href="google.com">link</a>',
       image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg',
-      id: '',
-      radio_key: '',
-      sound_url: ''
+      id: 'note-cast-2024-09-18',
+      radio_key: 'note-cast',
+      sound_url: 'https://storage.googleapis.com/aicast-radio/note/radio_2024-09-18.mp3'
     },
     {
-      title: '【トリセツ】これからtimeleszオーディションを観る方へ...他【2024-09-18】',
-      release_datetime: '2024-09-18',
+      title: '【トリセツ】これからtimeleszオーディションを観る方へ...他【2024-09-19】',
+      release_datetime: '2024-09-19',
       duration: '00:05:54',
-      description: '',
-      description_html: '',
-      image: '',
-      id: '',
-      radio_key: '',
-      sound_url: ''
+      description: '説明文',
+      description_html: '説明文<br>html tag あり<a href="google.com">link</a>',
+      image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg',
+      id: 'note-cast-2024-09-19',
+      radio_key: 'note-cast',
+      sound_url: 'https://storage.googleapis.com/aicast-radio/note/radio_2024-09-19.mp3'
     },
   ];
 }
