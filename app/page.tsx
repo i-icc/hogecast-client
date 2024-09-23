@@ -1,8 +1,9 @@
-import Header from '../components/Home/Header';
-import PodcastCard from '../components/Home/PodcastCard';
-import Episode from '../components/Home/Episode';
-import PlayerBar from '../components/PlayerBar';
+import Header from './components/Header';
+import PodcastCard from './components/PodcastCard';
+import Episode from '@/components/Episode';
+import PlayerBar from '@/components/PlayerBar';
 import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
+import Link from 'next/link';
 
 // サーバー側でデータをフェッチする
 async function fetchPodcasts(): Promise<PodcastType[]> {
@@ -53,7 +54,9 @@ export default async function Home() {
         <h2 className="text-white text-lg mb-2">番組</h2>
         <div className="flex space-x-4 overflow-x-scroll">
           {podcasts.map((podcast) => (
-            <PodcastCard key={podcast.id} {...podcast} />
+            <Link key={podcast.id} href={`/podcasts/${podcast.id}`} >
+              < PodcastCard key={podcast.id} {...podcast} />
+            </Link>
           ))}
         </div>
       </section>
