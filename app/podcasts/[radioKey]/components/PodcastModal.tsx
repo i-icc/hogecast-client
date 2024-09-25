@@ -2,24 +2,38 @@ import { Podcast } from '@/types';
 import React from 'react';
 import parse from 'html-react-parser';
 
-const ProgramInfoModal = (podcast: Podcast) => {
+interface PodcastModalProps extends Podcast {
+    onClose: () => void;
+}
+
+const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, onClose }) => {
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-gray-900 text-white rounded-lg w-full max-w-md relative">
-                <div className="flex justify-between items-center p-4 border-b border-gray-700">
-                    <h2 className="text-lg font-semibold">{podcast.title}</h2>
-                    <div className="flex items-center space-x-2">
-                        <button className="bg-gray-800 text-white px-3 py-1 rounded-lg hover:bg-gray-700 text-sm">
-                            完了
-                        </button>
+        <div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50"
+            onClick={onClose}
+        >
+            <div
+                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <div className="flex items-center justify-between p-4 border-b border-gray-700">
+                    <div className="flex-1 text-center">
+                        <h3 className="text-xl font-semibold text-white">番組について</h3>
                     </div>
+                    <button
+                        className="text-gray-300 hover:text-white"
+                        onClick={onClose}
+                    >
+                        完了
+                    </button>
                 </div>
-                <div className="p-4 space-y-4 max-h-[80vh] overflow-y-auto">
-                    {parse(podcast.description_html)}
+                <div className="p-5 text-white">
+                    <h2 className="text-2xl font-bold mb-4">{title}</h2>
+                    <div className="text-base leading-relaxed">{parse(description_html)}</div>
                 </div>
             </div>
         </div>
     );
 };
 
-export default ProgramInfoModal;
+export default PodcastModal;

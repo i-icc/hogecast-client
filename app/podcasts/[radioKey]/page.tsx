@@ -5,7 +5,7 @@ import PodcastHeader from "@/app/podcasts/[radioKey]/components/PodcastHeader";
 
 async function fetchPodcast(radioKey: string): Promise<PodcastType> {
     // APIやデータベースからデータを取得する（ここではモックデータを使用）
-    return { image: 'https://storage.googleapis.com/aicast-radio/images/aicast-icon.jpg', title: 'ai-cast', description: `hoge cast ${radioKey}hoaorgieahgoagoarghaeiuaergliagruabegalgruabgeulreablg`, id: "hoge-cast", description_html: '<a hrel="google.com">hogeyou</a>' };
+    return { image: 'https://storage.googleapis.com/aicast-radio/images/aicast-icon.jpg', title: 'ai-cast', description: `hoge cast ${radioKey}hoaorgieahgoagoarghaeiuaergliagruabegalgruabgeulreablg`, id: "hoge-cast", description_html: '<a href="https://www.google.com/">hogeyou</a><br>ほげげげげげげげ' };
 }
 
 async function fetchEpisodes(radioKey: string): Promise<EpisodeType[]> {

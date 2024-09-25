@@ -1,20 +1,30 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Podcast as PodcastType } from '@/types';
 import Link from 'next/link';
+import PodcastModal from './PodcastModal';
 
-const PodcastHeader: React.FC<PodcastType> = ({ title, image, description }) => {
+const PodcastHeader: React.FC<PodcastType> = (podcast) => {
     const descriptionLength = 15;
-    const truncatedDescription = description.length > descriptionLength
-        ? `${description.slice(0, descriptionLength)}...`
-        : description;
+    const truncatedDescription = podcast.description.length > descriptionLength
+        ? `${podcast.description.slice(0, descriptionLength)}...`
+        : podcast.description;
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const onOpen = () => setIsOpen(true);
+    const onClose = () => setIsOpen(false);
 
     return (
         <div className="relative w-full h-[300px] bg-black text-white">
+            {isOpen && (<PodcastModal onClose={onClose} {...podcast} />)}
+
             {/* 背景画像とフェードアウト効果 */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70">
                 <Image
-                    src={image}
+                    src={podcast.image}
                     alt="podcast"
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'center' }}
@@ -33,20 +43,14 @@ const PodcastHeader: React.FC<PodcastType> = ({ title, image, description }) => 
                     </div>
                 </Link>
                 {/* 詳細アイコン */}
-                <button className="text-white">
+                <button onClick={onOpen} className="text-white">
                     <b>⋯</b>
                 </button>
             </div>
 
             {/* タイトルと説明を左下に配置 */}
-            <div className="absolute bottom-4 left-4 z-10">
-                <h1 className="text-2xl font-bold">{title}</h1>
-                <p className="text-sm text-gray-300">{truncatedDescription}</p>
-            </div>
-
-
-            <div className="absolute bottom-4 left-4 z-10">
-                <h1 className="text-2xl font-bold">{title}</h1>
+            <div className="absolute bottom-4 left-4 z-10" onClick={onOpen}>
+                <h1 className="text-2xl font-bold">{podcast.title}</h1>
                 <p className="text-sm text-gray-300">{truncatedDescription}</p>
             </div>
         </div >
