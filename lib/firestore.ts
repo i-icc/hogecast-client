@@ -3,8 +3,10 @@ import { db } from "./firebaseConfig";
 import { FirestoreCollections } from './constants';  // Import the enum
 import { Episode, Podcast } from "@/types";
 
+const podcastsCollection = collection(db, FirestoreCollections.Podcasts);
+const episodesCollection = collection(db, FirestoreCollections.Episodes);
+
 export const getPodcasts = async (): Promise<Podcast[]> => {
-    const podcastsCollection = collection(db, FirestoreCollections.Podcasts);
     const podcastsSnapshot = await getDocs(podcastsCollection);
     return podcastsSnapshot.docs.map(doc => ({
         id: doc.id,
@@ -16,7 +18,6 @@ export const getPodcasts = async (): Promise<Podcast[]> => {
 };
 
 export const getEpisodes = async (): Promise<Episode[]> => {
-    const episodesCollection = collection(db, FirestoreCollections.Episodes);
     const episodesSnapshot = await getDocs(episodesCollection);
     return episodesSnapshot.docs.map(doc => ({
         id: doc.id,
