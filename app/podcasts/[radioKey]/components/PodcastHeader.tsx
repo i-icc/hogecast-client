@@ -43,7 +43,7 @@ const PodcastHeader: React.FC<PodcastType> = (podcast) => {
                     </div>
                 </Link>
                 {/* 詳細アイコン */}
-                <button onClick={onOpen} className="text-white">
+                <button onClick={onOpen} className="text-white pr-4">
                     <b>⋯</b>
                 </button>
             </div>
