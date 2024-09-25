@@ -20,6 +20,10 @@
         "destination": "/_next/static/*"
       },
       {
+        "destination": "/podcasts/[radioKey].html",
+        "regex": "^/podcasts/([^/]+?)(?:/)?$"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
