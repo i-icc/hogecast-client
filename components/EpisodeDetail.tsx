@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Episode as EpisodeType } from '@/types';
-import EpisodeModal from './PodcastModal';
+import EpisodeModal from './EpisodeModal';
 
 const EpisodeDetailButton: React.FC<EpisodeType> = (episode) => {
     const [isOpen, setIsOpen] = useState(false);

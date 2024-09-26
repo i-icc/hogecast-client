@@ -1,7 +1,7 @@
 import Episode from "@/components/Episode";
 import PlayerBar from "@/components/PlayerBar";
 import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
-import PodcastHeader from "@/app/podcasts/[radioKey]/components/PodcastHeader";
+import PodcastHeader from "@/components/PodcastHeader";
 
 async function fetchPodcast(radioKey: string): Promise<PodcastType> {
     // APIやデータベースからデータを取得する（ここではモックデータを使用）

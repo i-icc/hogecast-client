@@ -1,12 +1,12 @@
-import { Podcast } from '@/types';
+import { Episode } from '@/types';
 import React from 'react';
 import parse from 'html-react-parser';
 
-interface PodcastModalProps extends Podcast {
+interface EpisodeModalProps extends Episode {
     onClose: () => void;
 }
 
-const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, onClose }) => {
+const EpisodeModal: React.FC<EpisodeModalProps> = ({ title, description_html, onClose }) => {
     return (
         <div
             className="fixed inset-0 bg-black bg-opacity-50 flex items-end justify-center z-50"
@@ -18,10 +18,10 @@ const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, on
             >
                 <div className="flex items-center justify-between p-4 border-b border-gray-700">
                     <div className="flex-1 text-center">
-                        <h3 className="text-xl font-semibold text-white">番組について</h3>
+                        <h3 className="text-xl font-semibold text-white">エピソードについて</h3>
                     </div>
                     <button
-                        className="text-gray-300 hover:text-white  pr-2"
+                        className="text-gray-300 hover:text-white pr-2"
                         onClick={onClose}
                     >
                         完了
@@ -36,4 +36,4 @@ const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, on
     );
 };
 
-export default PodcastModal;
+export default EpisodeModal;
