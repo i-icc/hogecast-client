@@ -18,10 +18,16 @@
       {
         "source": "/_next/static/*",
         "destination": "/_next/static/*"
-      },
+      }
+    ],
+    "dynamicRoutes": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "page": "/podcasts/[radioKey]",
+        "regex": "^/podcasts/([^/]+?)(?:/)?$",
+        "routeKeys": {
+          "radioKey": "radioKey"
+        },
+        "namedRegex": "^/podcasts/(?<radioKey>[^/]+?)(?:/)?$"
       }
     ]
   }
