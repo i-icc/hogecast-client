@@ -27,8 +27,8 @@ const Episode: React.FC<EpisodeType> = (episode) => {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center space-x-2">
-                <button className="text-white">▶️</button>
+            <div className="flex items-center">
+                <button className="text-white px-3">▶️</button>
                 <EpisodeDetailButton {...episode} />
             </div>
         </div>
