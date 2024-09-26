@@ -4,6 +4,7 @@ const nextConfig = {
         domains: ['storage.googleapis.com'],
         unoptimized: true,
     },
+    trailingSlash: true,
 };
 
 export default nextConfig;

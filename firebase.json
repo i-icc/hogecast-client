@@ -20,14 +20,6 @@
         "destination": "/_next/static/*"
       },
       {
-        "source": "/podcasts/**",
-        "destination": "/index.html"
-      },
-      {
-        "source": "/test/**",
-        "destination": "/index.html"
-      },
-      {
         "source": "**",
         "destination": "/index.html"
       }

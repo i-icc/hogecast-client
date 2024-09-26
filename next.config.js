@@ -3,4 +3,5 @@ module.exports = {
         domains: ['storage.googleapis.com'],
         unoptimized: true,
     },
+    trailingSlash: true,
 };
