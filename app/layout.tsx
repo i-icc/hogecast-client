@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "@/redux/provider";
+import PlayerBar from "@/components/PlayerBar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -10,7 +12,7 @@ const geistSans = localFont({
 
 export const metadata: Metadata = {
   title: "AI cast",
-  description: "AI が日本で話題な記事を要約してラジオとして提供するサイトです。一駅分の移動の時間でトレンドをキャッチ！",
+  description: "AI が日本で話題な記事を要約してラジオ・podcastとして提供するサイトです。一駅分の移動の時間でトレンドをキャッチ！",
 };
 
 export default function RootLayout({
@@ -23,7 +25,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+          <PlayerBar />
+        </Providers>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import PodcastCard from '../components/PodcastCard';
 import Episode from '@/components/Episode';
-import PlayerBar from '@/components/PlayerBar';
 import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
 import Link from 'next/link';
 
@@ -10,6 +9,7 @@ async function fetchPodcasts(): Promise<PodcastType[]> {
   // APIやデータベースからデータを取得する（ここではモックデータを使用）
   return [
     { image: 'https://storage.googleapis.com/aicast-radio/images/aicast-icon.jpg', title: 'ai-cast', description: 'hoge cast', id: "hoge-cast", description_html: '<a hrel="google.com">hogeyou</a>' },
+    { image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg', title: 'note cast', description: 'note cast', id: "note-cast", description_html: '<a hrel="google.com">hogeyou</a>' },
     { image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg', title: 'note cast', description: 'note cast', id: "note-cast", description_html: '<a hrel="google.com">hogeyou</a>' },
   ];
 }
@@ -70,8 +70,6 @@ export default async function Home() {
           ))}
         </div>
       </section>
-
-      <PlayerBar {...episodes[0]} />
     </div>
   );
 }

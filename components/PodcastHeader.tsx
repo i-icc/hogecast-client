@@ -22,7 +22,7 @@ const PodcastHeader: React.FC<PodcastType> = (podcast) => {
             {isOpen && (<PodcastModal onClose={onClose} {...podcast} />)}
 
             {/* 背景画像とフェードアウト効果 */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-70">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50">
                 <Image
                     src={podcast.image}
                     alt="podcast"
@@ -49,9 +49,9 @@ const PodcastHeader: React.FC<PodcastType> = (podcast) => {
             </div>
 
             {/* タイトルと説明を左下に配置 */}
-            <div className="absolute bottom-4 left-4 z-10" onClick={onOpen}>
-                <h1 className="text-2xl font-bold">{podcast.title}</h1>
-                <p className="text-sm text-gray-300">{truncatedDescription}</p>
+            <div className="absolute bottom-4 left-4 z-1" onClick={onOpen}>
+                <h1 className="text-2xl font-bold text-lime-300">{podcast.title}</h1>
+                <p className="text-sm text-lime-100">{truncatedDescription}</p>
             </div>
         </div >
     );

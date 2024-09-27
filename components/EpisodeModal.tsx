@@ -13,7 +13,7 @@ const EpisodeModal: React.FC<EpisodeModalProps> = ({ title, description_html, on
             onClick={onClose}
         >
             <div
-                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative"
+                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative border-t-2 border-gray-400"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center justify-between p-4 border-b border-gray-700">
@@ -21,7 +21,7 @@ const EpisodeModal: React.FC<EpisodeModalProps> = ({ title, description_html, on
                         <h3 className="text-xl font-semibold text-white">エピソードについて</h3>
                     </div>
                     <button
-                        className="text-gray-300 hover:text-white pr-2"
+                        className="text-lime-200 hover:text-lime-50 pr-2"
                         onClick={onClose}
                     >
                         完了
