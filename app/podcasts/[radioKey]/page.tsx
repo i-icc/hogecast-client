@@ -1,47 +1,21 @@
 import Episode from "@/components/Episode";
-import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
+import { redirect } from 'next/navigation';
 import PodcastHeader from "@/components/PodcastHeader";
 import Link from "next/link";
-
-async function fetchPodcast(radioKey: string): Promise<PodcastType> {
-    // APIやデータベースからデータを取得する（ここではモックデータを使用）
-    return { image: 'https://storage.googleapis.com/aicast-radio/images/aicast-icon.jpg', title: 'ai-cast', description: `hoge cast ${radioKey}hoaorgieahgoagoarghaeiuaergliagruabegalgruabgeulreablg`, id: "hoge-cast", description_html: '<a href="https://www.google.com/">hogeyou</a><br>ほげげげげげげげ' };
-}
-
-async function fetchEpisodes(radioKey: string): Promise<EpisodeType[]> {
-    return [
-        {
-            title: '旅ノートの作り方...他【2024-09-18】',
-            release_datetime: '2024-09-18',
-            duration: '00:05:54',
-            description: '説明文',
-            description_html: '説明文<br>html tag あり<a href="google.com">link</a>',
-            image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg',
-            id: 'note-cast-2024-09-18',
-            radio_key: `${radioKey}`,
-            sound_url: 'https://storage.googleapis.com/aicast-radio/note/radio_2024-09-18.mp3'
-        },
-        {
-            title: '【トリセツ】これからtimeleszオーディションを観る方へ...他【2024-09-19】',
-            release_datetime: '2024-09-19',
-            duration: '00:05:54',
-            description: '説明文',
-            description_html: '説明文<br>html tag あり<a href="google.com">link</a>',
-            image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg',
-            id: 'note-cast-2024-09-19',
-            radio_key: 'note-cast',
-            sound_url: 'https://storage.googleapis.com/aicast-radio/note/radio_2024-09-19.mp3'
-        },
-    ];
-}
+import { getEpisodesByRadioKey, getPodcastById } from "@/lib/firestore";
 
 export default async function Podcast({
     params,
 }: {
     params: { radioKey: string };
 }) {
-    const podcast = await fetchPodcast(params.radioKey);
-    const episodes = await fetchEpisodes(params.radioKey);
+    const podcast = await getPodcastById(params.radioKey);
+    const episodes = await getEpisodesByRadioKey(params.radioKey, 5);
+
+    // ラジオがない場合ホームへリダイレクト
+    if (podcast === null) {
+        redirect('/');
+    }
 
     return (
         <div className="bg-black min-h-screen pb-24">

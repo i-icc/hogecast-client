@@ -1,6 +1,5 @@
 import { Episode } from '@/types';
 import React from 'react';
-import parse from 'html-react-parser';
 
 interface EpisodeModalProps extends Episode {
     onClose: () => void;
@@ -29,7 +28,10 @@ const EpisodeModal: React.FC<EpisodeModalProps> = ({ title, description_html, on
                 </div>
                 <div className="p-5 text-white">
                     <h2 className="text-2xl font-bold mb-4">{title}</h2>
-                    <div className="text-base leading-relaxed">{parse(description_html)}</div>
+                    <div
+                        className="text-base leading-relaxed"
+                        dangerouslySetInnerHTML={{ __html: description_html }}
+                    />
                 </div>
             </div>
         </div>

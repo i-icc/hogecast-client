@@ -1,4 +1,5 @@
 import Episode from "@/components/Episode";
+import { getEpisodesByRadioKey } from "@/lib/firestore";
 import { Episode as EpisodeType } from '@/types';
 import Link from "next/link";
 
@@ -188,7 +189,7 @@ export default async function Episodes({
 }: {
     params: { radioKey: string };
 }) {
-    const episodes = await fetchEpisodes(params.radioKey);
+    const episodes = await getEpisodesByRadioKey(params.radioKey, 365);
 
     return (
         <div className="bg-black min-h-screen pb-24">
