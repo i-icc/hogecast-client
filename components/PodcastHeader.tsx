@@ -49,7 +49,7 @@ const PodcastHeader: React.FC<PodcastType> = (podcast) => {
             </div>
 
             {/* タイトルと説明を左下に配置 */}
-            <div className="absolute bottom-4 left-4 z-10" onClick={onOpen}>
+            <div className="absolute bottom-4 left-4 z-1" onClick={onOpen}>
                 <h1 className="text-2xl font-bold text-lime-300">{podcast.title}</h1>
                 <p className="text-sm text-lime-100">{truncatedDescription}</p>
             </div>

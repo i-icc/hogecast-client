@@ -10,6 +10,7 @@ async function fetchPodcasts(): Promise<PodcastType[]> {
   return [
     { image: 'https://storage.googleapis.com/aicast-radio/images/aicast-icon.jpg', title: 'ai-cast', description: 'hoge cast', id: "hoge-cast", description_html: '<a hrel="google.com">hogeyou</a>' },
     { image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg', title: 'note cast', description: 'note cast', id: "note-cast", description_html: '<a hrel="google.com">hogeyou</a>' },
+    { image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg', title: 'note cast', description: 'note cast', id: "note-cast", description_html: '<a hrel="google.com">hogeyou</a>' },
   ];
 }
 

@@ -28,8 +28,8 @@ const Episode: React.FC<EpisodeType> = (episode) => {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center space-x-3">
-                <PlaylButton {...episode} />
+            <div className="flex items-center">
+                <div className='mx-3'><PlaylButton {...episode} /></div>
                 <EpisodeDetailButton {...episode} />
             </div>
         </div>
