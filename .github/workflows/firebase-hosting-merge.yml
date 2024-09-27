@@ -28,7 +28,7 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           firebase experiments:enable webframeworks
-          firebase hosting:channel:deploy live --project hogecast
+          firebase deploy --project hogecast
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 
