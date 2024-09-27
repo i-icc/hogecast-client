@@ -30,15 +30,17 @@ jobs:
         if: github.ref == 'refs/heads/main'
         run: |
           firebase experiments:enable webframeworks
-          firebase deploy --project hogecast
+          firebase deploy --project $NEXT_PUBLIC_FIREBASE_PROJECT_ID
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
 
       # ステージング環境 (stg) にデプロイ
       - name: Deploy to Firebase Hosting (stg)
         if: github.ref == 'refs/heads/develop'
         run: |
           firebase experiments:enable webframeworks
-          firebase hosting:channel:deploy stg --project hogecast
+          firebase hosting:channel:deploy stg --project $NEXT_PUBLIC_FIREBASE_PROJECT_ID
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+          NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
