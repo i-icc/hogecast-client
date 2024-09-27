@@ -1,15 +1,20 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { togglePlayPause } from '../redux/slices/episodeSlice';
 import Image from 'next/image';
+import AudioModal from './AudioModal';
 
 const PlayerBar: React.FC = () => {
     const dispatch = useDispatch();
     const audioRef = useRef<HTMLAudioElement | null>(null);
     const { sound_url, isPlaying, title, image, release_datetime, radio_key } = useSelector((state: RootState) => state.episode);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const onOpen = () => setIsOpen(true);
+    const onClose = () => setIsOpen(false);
 
     useEffect(() => {
         if (audioRef.current) {
@@ -29,8 +34,9 @@ const PlayerBar: React.FC = () => {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-gray-800 text-white flex items-center">
+            {isOpen && (<AudioModal onClose={onClose} audioRef={audioRef} />)}
             <audio ref={audioRef} src={sound_url} preload="auto" />
-            <div className="flex items-center">
+            <div className="flex items-center" onClick={onOpen}>
                 <Image
                     src={image}
                     alt="Podcast"

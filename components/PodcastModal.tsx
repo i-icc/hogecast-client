@@ -13,7 +13,7 @@ const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, on
             onClick={onClose}
         >
             <div
-                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative"
+                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative border-t-2 border-gray-400"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="flex items-center justify-between p-4 border-b border-gray-700">
