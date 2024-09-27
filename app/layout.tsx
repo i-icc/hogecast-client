@@ -20,18 +20,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const episode = {
-    title: '旅ノートの作り方...他【2024-09-18】',
-    release_datetime: '2024-09-18',
-    duration: '00:05:54',
-    description: '説明文',
-    description_html: '説明文<br>html tag あり<a href="https://google.com">link</a>',
-    image: 'https://storage.googleapis.com/aicast-radio/images/note-cast-icon.jpg',
-    id: 'note-cast-2024-09-18',
-    radio_key: 'note-cast',
-    sound_url: 'https://storage.googleapis.com/aicast-radio/note/radio_2024-09-18.mp3'
-  };
-
   return (
     <html lang="ja">
       <body
@@ -39,7 +27,7 @@ export default function RootLayout({
       >
         <Providers>
           {children}
-          <PlayerBar {...episode} />
+          <PlayerBar />
         </Providers>
       </body>
     </html>

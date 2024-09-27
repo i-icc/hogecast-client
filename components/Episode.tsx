@@ -2,6 +2,7 @@ import React from 'react';
 import { Episode as EpisodeType } from '@/types';
 import Image from 'next/image';
 import EpisodeDetailButton from './EpisodeDetail';
+import PlaylButton from './PlayButton';
 
 const Episode: React.FC<EpisodeType> = (episode) => {
     const descriptionLength = 50;
@@ -27,8 +28,8 @@ const Episode: React.FC<EpisodeType> = (episode) => {
                     </p>
                 </div>
             </div>
-            <div className="flex items-center">
-                <button className="text-white px-3">▶️</button>
+            <div className="flex items-center space-x-3">
+                <PlaylButton {...episode} />
                 <EpisodeDetailButton {...episode} />
             </div>
         </div>
