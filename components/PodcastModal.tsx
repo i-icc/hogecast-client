@@ -21,7 +21,7 @@ const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, on
                         <h3 className="text-xl font-semibold text-white">番組について</h3>
                     </div>
                     <button
-                        className="text-gray-300 hover:text-white  pr-2"
+                        className="text-lime-200 hover:text-lime-50  pr-2"
                         onClick={onClose}
                     >
                         完了
