@@ -12,8 +12,22 @@
     },
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/_next/image",
+        "destination": "/_next/image"
+      },
+      {
+        "source": "/_next/static/*",
+        "destination": "/_next/static/*"
+      }
+    ],
+    "dynamicRoutes": [
+      {
+        "page": "/podcasts/[radioKey]",
+        "regex": "^/podcasts/([^/]+?)(?:/)?$",
+        "routeKeys": {
+          "radioKey": "radioKey"
+        },
+        "namedRegex": "^/podcasts/(?<radioKey>[^/]+?)(?:/)?$"
       }
     ]
   }
