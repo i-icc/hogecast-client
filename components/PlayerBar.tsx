@@ -29,6 +29,7 @@ const PlayerBar: React.FC = () => {
 
     return (
         <div className="fixed bottom-0 left-0 right-0 p-4 bg-gray-800 text-white flex items-center">
+            <audio ref={audioRef} src={sound_url} preload="auto" />
             <div className="flex items-center">
                 <Image
                     src={image}
