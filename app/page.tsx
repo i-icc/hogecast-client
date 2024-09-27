@@ -1,7 +1,6 @@
 import Header from '../components/Header';
 import PodcastCard from '../components/PodcastCard';
 import Episode from '@/components/Episode';
-import PlayerBar from '@/components/PlayerBar';
 import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
 import Link from 'next/link';
 
@@ -70,8 +69,6 @@ export default async function Home() {
           ))}
         </div>
       </section>
-
-      <PlayerBar {...episodes[0]} />
     </div>
   );
 }

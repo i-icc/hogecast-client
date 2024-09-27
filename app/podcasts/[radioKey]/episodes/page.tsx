@@ -1,5 +1,4 @@
 import Episode from "@/components/Episode";
-import PlayerBar from "@/components/PlayerBar";
 import { Episode as EpisodeType } from '@/types';
 import Link from "next/link";
 
@@ -215,8 +214,6 @@ export default async function Episodes({
                     ))}
                 </div>
             </section>
-
-            <PlayerBar {...episodes[0]} />
         </div>
     );
 }

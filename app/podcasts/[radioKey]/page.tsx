@@ -1,5 +1,4 @@
 import Episode from "@/components/Episode";
-import PlayerBar from "@/components/PlayerBar";
 import { Podcast as PodcastType, Episode as EpisodeType } from '@/types';
 import PodcastHeader from "@/components/PodcastHeader";
 import Link from "next/link";
@@ -59,8 +58,6 @@ export default async function Podcast({
                     ))}
                 </div>
             </section>
-
-            <PlayerBar {...episodes[0]} />
         </div>
     );
 }
