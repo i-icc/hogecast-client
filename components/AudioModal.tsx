@@ -97,7 +97,7 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
                             max="100"
                             value={duration ? (currentTime / duration) * 100 : 0}
                             onInput={handleSeek}
-                            className="w-full mx-2"
+                            className="w-full mx-2 accent-lime-300"
                         />
 
                         {/* 残り時間 */}
