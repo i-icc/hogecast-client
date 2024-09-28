@@ -61,7 +61,7 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
             onClick={onClose}
         >
             <div
-                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative border-t-2 border-gray-400 py-2 px-5"
+                className="w-full h-[90%] themaBg rounded-t-2xl shadow-lg overflow-y-auto relative border-t-2 border-gray-400 py-2 px-5"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className='flex justify-center items-center'>
@@ -79,14 +79,14 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
 
                 {/* 番組情報 */}
                 <div className="text-left mb-6">
-                    <p className="text-sm text-gray-400">{release_datetime}</p>
+                    <p className="text-sm subColer">{release_datetime}</p>
                     <p className="text-lg font-bold">{title}</p>
-                    <p className="text-base text-lime-300">{radio_key}</p>
+                    <p className="text-base themaL">{radio_key}</p>
                 </div>
 
                 {/* プログレスバー */}
                 <div className="flex flex-col items-center justify-center">
-                    <div className="flex items-center justify-between text-gray-400 text-sm w-full">
+                    <div className="flex items-center justify-between subColer text-sm w-full">
                         {/* 現在の再生時間 */}
                         <span>{formatTime(currentTime)}</span>
 
@@ -114,7 +114,7 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
                         onClick={handlePlayPause}
                         className="p-3 text-5xl"
                     >
-                        {isPlaying ? <span>◽️</span> : <span>▶︎</span>}
+                        {isPlaying ? <span>◼️</span> : <span>▶︎</span>}
                     </button>
                     <div>
                         {/* ここにスキップボタン */}

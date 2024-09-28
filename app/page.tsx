@@ -10,12 +10,12 @@ export default async function Home() {
   const episodes = await getEpisodes(5);
 
   return (
-    <div className="bg-black min-h-screen pb-24">
+    <div className="min-h-screen pb-24">
       <Header />
 
       {/* Podcasts Section */}
       <section className="p-4">
-        <h2 className="text-white text-lg mb-2 font-bold">番組</h2>
+        <h2 className="text-lg mb-2 font-bold">番組</h2>
         <div className="flex space-x-4 overflow-x-scroll">
           {podcasts.map((podcast) => (
             <Link key={podcast.id} href={`/podcasts/${podcast.id}`} >
@@ -27,7 +27,7 @@ export default async function Home() {
 
       {/* Episodes Section */}
       <section className="p-4">
-        <h2 className="text-white text-lg mb-2 font-bold">最新エピソード</h2>
+        <h2 className="text-lg mb-2 font-bold">最新エピソード</h2>
         <div>
           {episodes.map((episode) => (
             <Episode key={episode.id} {...episode} />
@@ -37,12 +37,12 @@ export default async function Home() {
 
       {/* App Section */}
       <section className="p-4">
-        <h2 className="text-white text-lg mb-2 font-bold">このサービスについて</h2>
-        <div className='text-gray-300'>
+        <h2 className="text-lg mb-2 font-bold">このサービスについて</h2>
+        <div className='subColer'>
           <p>AI が日本で話題な記事を要約してラジオとして提供するサービスです。</p>
           <p>一駅分の移動の時間でトレンドをキャッチ！</p>
         </div>
-        <h3 className='text-white text-lg my-2'>各種 podcast でも配信中！</h3>
+        <h3 className='text-lg my-2'>各種 podcast でも配信中！</h3>
         <div>
           <ul>
             <li><a href="https://music.amazon.co.jp/podcasts/2c53d14b-5c3b-463a-b451-66733ddb3784/ai-cast" target='_blank'>Amazon podcast</a></li>

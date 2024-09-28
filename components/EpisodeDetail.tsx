@@ -13,7 +13,7 @@ const EpisodeDetailButton: React.FC<EpisodeType> = (episode) => {
     return (
         <>
             {isOpen && (<EpisodeModal onClose={onClose} {...episode} />)}
-            <button className="text-white" onClick={onOpen}>⋯</button>
+            <button className="" onClick={onOpen}>⋯</button>
         </>
     );
 };

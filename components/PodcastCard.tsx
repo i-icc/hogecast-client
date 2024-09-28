@@ -17,9 +17,9 @@ const PodcastCard: React.FC<Podcast> = ({ image, title, description }) => {
                 height={144}
                 className="rounded-lg"
             />
-            <div className="mt-2 text-sm text-white">
-                <h3 className="font-bold">{title}</h3>
-                <p className="text-gray-400">{truncatedDescription}</p>
+            <div className="mt-2 text-sm">
+                <h3 className="font-bold themaC">{title}</h3>
+                <p className="subColer">{truncatedDescription}</p>
             </div>
         </div>
     );

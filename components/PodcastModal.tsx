@@ -13,21 +13,21 @@ const PodcastModal: React.FC<PodcastModalProps> = ({ title, description_html, on
             onClick={onClose}
         >
             <div
-                className="w-full h-[90%] bg-black rounded-t-2xl shadow-lg overflow-y-auto relative border-t-2 border-gray-400"
+                className="w-full h-[90%] themaBg rounded-t-2xl shadow-lg overflow-y-auto relative border-t-2 border-gray-400"
                 onClick={(e) => e.stopPropagation()}
             >
-                <div className="flex items-center justify-between p-4 border-b border-gray-700">
+                <div className="flex items-center justify-between p-4 border-b border-gray-600">
                     <div className="flex-1 text-center">
-                        <h3 className="text-xl font-semibold text-white">番組について</h3>
+                        <h3 className="text-xl font-semibold">番組について</h3>
                     </div>
                     <button
-                        className="text-lime-200 hover:text-lime-50  pr-2"
+                        className="themaL hover:text-lime-50  pr-2"
                         onClick={onClose}
                     >
                         完了
                     </button>
                 </div>
-                <div className="p-5 text-white">
+                <div className="p-5">
                     <h2 className="text-2xl font-bold mb-4">{title}</h2>
                     <div className="text-base leading-relaxed">{parse(description_html)}</div>
                 </div>
