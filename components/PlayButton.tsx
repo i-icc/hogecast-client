@@ -28,7 +28,7 @@ const PlaylButton: React.FC<EpisodeType> = (episode) => {
 
     return (
         <button className="ml-auto" onClick={onPlay}>
-            {isEpisodePlaying ? <span>◽️</span> : <span>▶︎</span>}
+            {isEpisodePlaying ? <span>◼️</span> : <span>▶︎</span>}
         </button>
     );
 };

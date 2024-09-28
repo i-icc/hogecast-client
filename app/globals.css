@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #fdfdfd;
   --foreground: #171717;
+  --linkColer: rgb(132 204 22);
+  --subColer:  rgb(107 114 128);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --linkColer: rgb(217 249 157);
+    --subColer: rgb(209 213 219);
   }
 }
 
@@ -27,5 +31,21 @@ body {
 }
 
 a {
-  @apply text-lime-200; /* 文字色を一律で青に変更 */
+  color: var(--linkColer);
+}
+
+.subColer {
+  color: var(--subColer);
+}
+
+.themaBg {
+  background-color: var(--background);
+}
+
+.themaC {
+  color: var(--foreground);
+}
+
+.themaL {
+  color: var(--linkColer);
 }

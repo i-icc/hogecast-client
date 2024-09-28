@@ -12,7 +12,7 @@ const Episode: React.FC<EpisodeType> = (episode) => {
 
 
     return (
-        <div className="p-3 border-b border-gray-800 flex items-center justify-between">
+        <div className="p-3 border-b border-gray-600 flex items-center justify-between">
             <div className="flex items-center">
                 <Image
                     src={episode.image}
@@ -22,8 +22,8 @@ const Episode: React.FC<EpisodeType> = (episode) => {
                     className="rounded-lg mr-4"
                 />
                 <div>
-                    <h3 className="text-white font-semibold">{episode.title}</h3>
-                    <p className="text-gray-400 text-sm">
+                    <h3 className="font-semibold">{episode.title}</h3>
+                    <p className="subColer text-sm">
                         {episode.duration} {truncatedDescription}
                     </p>
                 </div>

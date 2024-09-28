@@ -18,7 +18,7 @@ const PodcastHeader: React.FC<PodcastType> = (podcast) => {
     const onClose = () => setIsOpen(false);
 
     return (
-        <div className="relative w-full h-[300px] bg-black text-white">
+        <div className="relative w-full h-[300px] bg-black ">
             {isOpen && (<PodcastModal onClose={onClose} {...podcast} />)}
 
             {/* 背景画像とフェードアウト効果 */}
