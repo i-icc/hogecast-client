@@ -1,3 +1,4 @@
+import { trackSelectRadioEvent } from '@/lib/firebaseAnalytics';
 import { Episode } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
@@ -33,6 +34,8 @@ const episodeSlice = createSlice({
             state.sound_url = action.payload.sound_url
             state.duration = action.payload.duration;
             state.isPlaying = false;
+
+            trackSelectRadioEvent(action.payload.id, action.payload.radio_key)
         },
         togglePlayPause: (state, action: PayloadAction<boolean>) => {
             state.isPlaying = action.payload;
