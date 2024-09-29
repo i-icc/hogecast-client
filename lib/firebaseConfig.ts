@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { Analytics, getAnalytics, isSupported } from 'firebase/analytics';
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -16,6 +17,13 @@ const app = initializeApp(firebaseConfig);
 
 // Get Firestore instance
 const db = getFirestore(app);
+let analytics: Analytics | null = null;
+isSupported().then((supported) => {
+    if (supported) {
+        analytics = getAnalytics(app);
+    }
+});
 
-export { db };
+
+export { db, analytics };
 
