@@ -7,6 +7,7 @@ import Link from 'next/link';
 export default async function Home() {
   // サーバーコンポーネント内でデータフェッチ
   const podcasts = await getPodcasts();
+  podcasts.sort((a, b) => a.sort - b.sort);
   const episodes = await getEpisodes(5);
 
   return (
