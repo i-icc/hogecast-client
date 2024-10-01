@@ -2,13 +2,9 @@
 
 import { analytics } from "@/lib/firebaseConfig"
 
+analytics
 
 const FirebaseAnalytics = () => {
-    if (analytics) {
-        console.log("あるよ")
-    } else {
-        console.log("ないよ")
-    }
     return <div></div>
 }
 
