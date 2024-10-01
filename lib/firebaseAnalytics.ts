@@ -7,7 +7,8 @@ export const trackSelectRadioEvent = (radioKey: string, podcastKey: string) => {
             radio_key: radioKey,
             podcast_key: podcastKey,
         });
+        console.log("log event! eventName:selectRadio", radioKey, podcastKey)
     } else {
-        console.log("unlog event!eventName:selectRadio", radioKey, podcastKey)
+        console.log("unlog event! eventName:selectRadio", radioKey, podcastKey)
     }
 };

@@ -33,7 +33,7 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
                 audioElement.removeEventListener('loadedmetadata', setAudioDuration);
             };
         }
-    }, []);
+    }, [audioRef]);
 
     // プログレスバーを動かしたときに再生位置を変更
     const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Providers } from "@/redux/provider";
 import PlayerBar from "@/components/PlayerBar";
+import FirebaseAnalytics from "@/components/FirebaseAnalytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,6 +27,7 @@ export default function RootLayout({
         className={`${geistSans.variable} antialiased`}
       >
         <Providers>
+          <FirebaseAnalytics />
           {children}
           <PlayerBar />
         </Providers>
