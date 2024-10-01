@@ -1,6 +1,6 @@
-import { initializeApp } from "firebase/app";
+import { getApps, initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { Analytics, getAnalytics, isSupported } from 'firebase/analytics';
+import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,17 +13,13 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0]
 
 // Get Firestore instance
 const db = getFirestore(app);
-let analytics: Analytics | null = null;
-isSupported().then((supported) => {
-    if (supported) {
-        analytics = getAnalytics(app);
-    }
-});
-
+const analytics = typeof window !== 'undefined'
+    ? getAnalytics(app)
+    : undefined
 
 export { db, analytics };
 
