@@ -16,4 +16,5 @@ export interface Podcast {
     description: string;
     description_html: string;
     id: string;
+    sort: number;
 }

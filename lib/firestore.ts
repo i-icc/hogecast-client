@@ -15,6 +15,7 @@ export const getPodcasts = async (): Promise<Podcast[]> => {
         image: doc.data().image,
         description: doc.data().description,
         description_html: doc.data().description_html,
+        sort: doc.data().sort,
     }));
 };
 
@@ -31,6 +32,7 @@ export const getPodcastById = async (id: string): Promise<Podcast | null> => {
             image: data.image,
             description: data.description,
             description_html: data.description_html,
+            sort: data.sort,
         };
     } else {
         return null; // ドキュメントが存在しない場合
