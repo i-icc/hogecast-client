@@ -2,13 +2,24 @@ import Header from '../components/Header';
 import PodcastCard from '../components/PodcastCard';
 import Episode from '@/components/Episode';
 import { getEpisodes, getPodcasts } from '@/lib/firestore';
+import { Episode as EpisodeType } from '@/types';
 import Link from 'next/link';
+import { NextResponse } from 'next/server';
+
+export async function getEpisodesFromFirebase(num: number) {
+  const episodes = await getEpisodes(num);
+  const response = NextResponse.json({ episodes: episodes });
+  response.headers.set('Cache-Control', 'public, max-age=21600, stale-while-revalidate=3600'); // 6 hours cache, 1 hour stale
+  return response;
+}
 
 export default async function Home() {
   // サーバーコンポーネント内でデータフェッチ
   const podcasts = await getPodcasts();
   podcasts.sort((a, b) => a.sort - b.sort);
-  const episodes = await getEpisodes(5);
+  const episodesResponse = await getEpisodesFromFirebase(5);
+  const episodesData = await episodesResponse.json();
+  const episodes: EpisodeType[] = episodesData.episodes;
 
   return (
     <div className="min-h-screen pb-24">
