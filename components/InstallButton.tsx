@@ -1,5 +1,6 @@
 "use client";
 
+import { trackInstallAppEvent } from "@/lib/firebaseAnalytics";
 import React, { useEffect, useState } from "react";
 
 interface Props {
@@ -34,7 +35,9 @@ const InstallButton = ({
 
         deferredPrompt.prompt();
         const choiceResult = await deferredPrompt.userChoice;
-        if (choiceResult.outcome === "accepted") {
+        const isAccepted = choiceResult.outcome === "accepted"
+        trackInstallAppEvent(isAccepted);
+        if (isAccepted) {
             setDeferredPrompt(null);
             setIsInstallable(false);
         } else {

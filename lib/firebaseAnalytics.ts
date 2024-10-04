@@ -13,10 +13,10 @@ export const trackSelectRadioEvent = (radioKey: string, podcastKey: string) => {
     }
 };
 
-export const trackInstallAppEvent = () => {
+export const trackInstallAppEvent = (isInstalled: boolean) => {
     if (analytics) {
         logEvent(analytics, 'installApp', {});
     } else {
-        console.log("unlog event! eventName:installApp")
+        console.log("unlog event! eventName:installApp", isInstalled)
     }
 };
