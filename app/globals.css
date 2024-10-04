@@ -46,6 +46,14 @@ a {
   color: var(--foreground);
 }
 
+.notThemaC {
+  color: var(--background);
+}
+
 .themaL {
   color: var(--linkColer);
+}
+
+.themaBgL {
+  background-color: var(--linkColer);
 }
