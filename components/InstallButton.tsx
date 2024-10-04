@@ -15,17 +15,29 @@ interface BeforeInstallPromptEvent extends Event {
 
 const InstallButton = ({
     message = "今すぐインストール！",
-    disabledMessage = "インストール\nありがとうございます！",
 }: Props) => {
     const [deferredPrompt, setDeferredPrompt] =
         useState<BeforeInstallPromptEvent | null>(null);
     const [isInstallable, setIsInstallable] = useState(false);
+    const [isSupported, setIsSupported] = useState(false);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        window.addEventListener("beforeinstallprompt", (e: Event) => {
+        const handleBeforeInstallPrompt = (e: Event) => {
+            e.preventDefault(); // モバイルでのミニ情報バーを防ぐ
             setDeferredPrompt(e as BeforeInstallPromptEvent);
             setIsInstallable(true);
-        });
+        };
+
+        // PWAがサポートされているかを確認
+        if ("beforeinstallprompt" in window) {
+            setIsSupported(true);
+            window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+        }
+
+        return () => {
+            window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+        };
     }, []);
 
     const onInstallClick = async () => {
@@ -33,26 +45,36 @@ const InstallButton = ({
             return;
         }
 
+        setLoading(true);
         deferredPrompt.prompt();
         const choiceResult = await deferredPrompt.userChoice;
-        const isAccepted = choiceResult.outcome === "accepted"
+        const isAccepted = choiceResult.outcome === "accepted";
         trackInstallAppEvent(isAccepted);
+
         if (isAccepted) {
             setDeferredPrompt(null);
             setIsInstallable(false);
         } else {
             setIsInstallable(true);
         }
+        setLoading(false);
     };
 
     return (
-        <button
-            onClick={() => void onInstallClick()}
-            className="rounded-full themaBgL notThemaC px-5 py-2 font-semibold no-underline"
-            disabled={!isInstallable}
-        >
-            {isInstallable ? message : disabledMessage}
-        </button>
+        <>
+            {isSupported ? (
+                <button
+                    onClick={onInstallClick}
+                    className="rounded-full themaBgL notThemaC px-5 py-2 font-semibold no-underline"
+                    disabled={!isInstallable || loading}
+                    aria-live="polite"
+                >
+                    {loading ? "処理中..." : isInstallable ?? message}
+                </button>
+            ) : (
+                <div></div>
+            )}
+        </>
     );
 };
 
