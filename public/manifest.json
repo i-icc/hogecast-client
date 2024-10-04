@@ -1,0 +1,32 @@
+{
+    "theme_color": "#85ff9d",
+    "background_color": "#e2ffd6",
+    "icons": [
+        {
+            "src": "icon512_maskable.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "purpose": "maskable",
+            "sizes": "512x512",
+            "src": "icon512_maskable.png",
+            "type": "image/png"
+        },
+        {
+            "purpose": "any",
+            "sizes": "512x512",
+            "src": "icon512_rounded.png",
+            "type": "image/png"
+        }
+    ],
+    "orientation": "portrait",
+    "display": "standalone",
+    "dir": "auto",
+    "lang": "ja-JP",
+    "name": "AI CAST",
+    "short_name": "AI CAST",
+    "start_url": "/",
+    "scope": "/",
+    "description": "トレンド記事をラジオでお届け！一駅分で話題をキャッチ！！"
+}

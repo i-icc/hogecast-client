@@ -17,7 +17,7 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0]
 
 // Get Firestore instance
 const db = getFirestore(app);
-const analytics = typeof window !== 'undefined'
+const analytics = typeof window !== 'undefined' && process.env.ENV !== "local"
     ? getAnalytics(app)
     : undefined
 
