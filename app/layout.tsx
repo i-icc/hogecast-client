@@ -27,6 +27,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon512_maskable.png"></link>
         <meta name="theme-color" content="#85ff9d" />
+        <meta name="google-adsense-account" content="ca-pub-7491603780665397"></meta>
       </head>
       <body
         className={`${geistSans.variable} antialiased`}
