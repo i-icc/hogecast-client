@@ -5,6 +5,8 @@ import Episode from '@/components/Episode';
 import { getEpisodes, getPodcasts } from '@/lib/firestore';
 import Link from 'next/link';
 
+export const revalidate = 21600;
+
 export default async function Home() {
   // サーバーコンポーネント内でデータフェッチ
   const podcasts = await getPodcasts();
