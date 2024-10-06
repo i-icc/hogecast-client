@@ -1,8 +1,8 @@
 import Episode from "@/components/Episode";
 import { redirect } from 'next/navigation';
 import PodcastHeader from "@/components/PodcastHeader";
-import Link from "next/link";
 import { getEpisodesByRadioKey, getPodcastById } from "@/lib/firestore";
+import LoadingLink from "@/components/LoadingLink";
 
 export default async function Podcast({
     params,
@@ -24,7 +24,7 @@ export default async function Podcast({
             <section className="p-4">
                 <div className=" left-4 right-4 flex justify-between items-center pb-1">
                     <h2 className="text-xl left-4">エピソード</h2>
-                    <Link href="./episodes"><div className="text-lime-100 right-4 py-1 px-2 bg-lime-600 rounded-full">もっと見る</div></Link>
+                    <LoadingLink href="./episodes"><div className="text-lime-100 right-4 py-1 px-2 bg-lime-600 rounded-full">もっと見る</div></LoadingLink>
                 </div>
                 <div>
                     {episodes.map((episode) => (
