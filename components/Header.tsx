@@ -5,7 +5,7 @@ const Header: React.FC = () => {
     return (
         <div className="m-1 flex justify-center items-center">
             <Image
-                src="./favicon.ico"
+                src="https://storage.googleapis.com/aicast-radio/images/favicon.ico"
                 alt="Podcast"
                 width={48}
                 height={48}
