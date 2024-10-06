@@ -5,6 +5,7 @@ import { RootState } from '@/redux/store';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import LoadingLink from './LoadingLink';
 
 interface ModalProps {
     onClose: () => void;
@@ -81,7 +82,7 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
                 <div className="text-left mb-6">
                     <p className="text-sm subColer">{release_datetime}</p>
                     <p className="text-lg font-bold">{title}</p>
-                    <p className="text-base themaL">{radio_key}</p>
+                    <LoadingLink href={`/podcasts/${radio_key}`} onFn={onClose}><p className="text-base themaL">{radio_key}</p></LoadingLink>
                 </div>
 
                 {/* プログレスバー */}

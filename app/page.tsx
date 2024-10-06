@@ -3,7 +3,7 @@ import Header from '../components/Header';
 import PodcastCard from '../components/PodcastCard';
 import Episode from '@/components/Episode';
 import { getEpisodes, getPodcasts } from '@/lib/firestore';
-import Link from 'next/link';
+import LoadingLink from '@/components/LoadingLink';
 
 export const revalidate = 21600;
 
@@ -22,9 +22,9 @@ export default async function Home() {
         <h2 className="text-lg mb-2 font-bold">番組</h2>
         <div className="flex space-x-4 overflow-x-scroll">
           {podcasts.map((podcast) => (
-            <Link key={podcast.id} href={`/podcasts/${podcast.id}`} >
+            <LoadingLink key={podcast.id} href={`/podcasts/${podcast.id}`} >
               < PodcastCard key={podcast.id} {...podcast} />
-            </Link>
+            </LoadingLink>
           ))}
         </div>
       </section>
