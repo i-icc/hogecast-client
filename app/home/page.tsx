@@ -5,7 +5,7 @@ import Episode from '@/components/Episode';
 import { getEpisodes, getPodcasts } from '@/lib/firestore';
 import LoadingLink from '@/components/LoadingLink';
 
-export const revalidate = 21600;
+export const revalidate = 0;
 
 export default async function Home() {
   // サーバーコンポーネント内でデータフェッチ
