@@ -115,7 +115,7 @@ const AudioModal: React.FC<ModalProps> = ({ onClose, audioRef }) => {
                         onClick={handlePlayPause}
                         className="p-3 text-5xl"
                     >
-                        {isPlaying ? <span>◼️</span> : <span>▶︎</span>}
+                        {isPlaying ? <span>■</span> : <span>▶︎</span>}
                     </button>
                     <div>
                         {/* ここにスキップボタン */}

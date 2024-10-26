@@ -51,7 +51,7 @@ const PlayerBar: React.FC = () => {
             </div>
             {/* Play/Pause Button */}
             <button className="ml-auto text-white" onClick={handlePlayPause}>
-                {isPlaying ? <span>◼️</span> : <span>▶︎</span>}
+                {isPlaying ? <span>■</span> : <span>▶︎</span>}
             </button>
         </div>
     );
